@@ -1,6 +1,6 @@
 Hi 👋 My name is Shubham Raj
 ============================
-![Shubham's GitHub stats](https://github-readme-stats.vercel.app/api?username=Shubhaaaaam&show_icons=true&theme=tokyonight)
+[![trophy](https://github-profile-trophy.vercel.app/?username=Shubhaaaaam&theme=monokai)](https://github.com/ryo-ma/github-profile-trophy)
 
 Web And Application Developer
 -----------------------------
