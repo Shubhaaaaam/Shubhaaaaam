@@ -1,34 +1,90 @@
-Hi 👋 My name is Shubham Raj
-============================
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>GitHub Stats Card</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #f5f5f5; color: #333; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
+    .card { background: #fff; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); padding: 20px; width: 360px; }
+    .profile { text-align: center; }
+    .profile img { width: 80px; height: 80px; border-radius: 50%; }
+    .profile h2 { margin: 10px 0 5px; font-size: 1.2em; }
+    .profile p { margin: 0; font-size: 0.9em; color: #666; }
+    .stats, .languages { margin-top: 20px; }
+    .stats div, .languages div { display: flex; justify-content: space-between; padding: 4px 0; }
+    .languages-bar { height: 6px; border-radius: 4px; background: #ddd; overflow: hidden; margin-top: 4px; }
+    .lang-bar-fill { height: 100%; background: #4CAF50; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="profile">
+      <img id="avatar" src="" alt="Avatar">
+      <h2 id="name">Username</h2>
+      <p id="bio"></p>
+    </div>
+    <div class="stats">
+      <div><span>Repos:</span><span id="repo-count">0</span></div>
+      <div><span>Stars:</span><span id="star-count">0</span></div>
+      <div><span>Followers:</span><span id="followers">0</span></div>
+      <div><span>Following:</span><span id="following">0</span></div>
+    </div>
+    <div class="languages">
+      <h3>Top Languages</h3>
+      <div id="languages-list"></div>
+    </div>
+  </div>
 
-Web And Application Developer
------------------------------
+  <script>
+    const username = 'YOUR_GITHUB_USERNAME';
 
-Aspiring Software Engineer with a solid foundation in computer science principles and hands-on experience in software development. Proven ability to design, implement, and maintain applications using various programming languages, including Python, Java, and C++. Adept at problem-solving, collaborating in team environments, and adapting quickly to new technologies. Seeking to leverage technical skills and passion for innovation in a challenging Software Engineering Intern position at a leading technology company.
+    async function fetchJSON(url) {
+      const res = await fetch(url);
+      if (!res.ok) throw new Error(`Failed to fetch ${url}`);
+      return res.json();
+    }
 
-* 🌍  I'm based in Bengaluru
-* ✉️  You can contact me at [shubhamsaha400@gmail.com](mailto:shubhamsaha400@gmail.com)
-* 🧠  I'm learning Docker, Machine Learning
-* 🤝  I'm open to collaborating on Projects
+    async function loadStats() {
+      const user = await fetchJSON(`https://api.github.com/users/${username}`);
+      document.getElementById('avatar').src       = user.avatar_url;
+      document.getElementById('name').textContent  = user.login;
+      document.getElementById('bio').textContent   = user.bio || '';
+      document.getElementById('repo-count').textContent = user.public_repos;
+      document.getElementById('followers').textContent  = user.followers;
+      document.getElementById('following').textContent  = user.following;
 
-### Skills
+      // repos and stars
+      let page = 1, repos = [];
+      while (true) {
+        const batch = await fetchJSON(`https://api.github.com/users/${username}/repos?per_page=100&page=${page}`);
+        if (!batch.length) break;
+        repos = repos.concat(batch);
+        page++;
+      }
+      const totalStars = repos.reduce((sum, r) => sum + r.stargazers_count, 0);
+      document.getElementById('star-count').textContent = totalStars;
 
+      // top languages
+      const langCount = {};
+      repos.forEach(r => { if (r.language) langCount[r.language] = (langCount[r.language]||0) + 1; });
+      const sorted = Object.entries(langCount).sort((a,b)=>b[1]-a[1]).slice(0,5);
+      const max = sorted[0]?.[1]||1;
 
-<p align="left">
-<a href="https://docs.microsoft.com/en-us/cpp/?view=msvc-170" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/c-colored.svg" width="36" height="36" alt="C" /></a><a href="https://docs.microsoft.com/en-us/cpp/?view=msvc-170" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/cplusplus-colored.svg" width="36" height="36" alt="C++" /></a><a href="https://git-scm.com/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/git-colored.svg" width="36" height="36" alt="Git" /></a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/javascript-colored.svg" width="36" height="36" alt="JavaScript" /></a><a href="https://www.python.org/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/python-colored.svg" width="36" height="36" alt="Python" /></a><a href="https://code.visualstudio.com/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/visualstudiocode.svg" width="36" height="36" alt="VS Code" /></a><a href="https://www.sublimetext.com/index2" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/sublimetext.svg" width="36" height="36" alt="Sublime Text" /></a><a href="https://developer.mozilla.org/en-US/docs/Glossary/HTML5" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/html5-colored.svg" width="36" height="36" alt="HTML5" /></a><a href="https://angular.io/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/angularjs-colored.svg" width="36" height="36" alt="Angular" /></a><a href="https://www.w3.org/TR/CSS/#css" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/css3-colored.svg" width="36" height="36" alt="CSS3" /></a><a href="https://tailwindcss.com/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/tailwindcss-colored.svg" width="36" height="36" alt="TailwindCSS" /></a><a href="https://www.mysql.com/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/mysql-colored.svg" width="36" height="36" alt="MySQL" /></a><a href="https://www.postgresql.org/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/postgresql-colored.svg" width="36" height="36" alt="PostgreSQL" /></a><a href="https://firebase.google.com/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/firebase-colored.svg" width="36" height="36" alt="Firebase" /></a><a href="https://flask.palletsprojects.com/en/2.0.x/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/flask-colored.svg" width="36" height="36" alt="Flask" /></a><a href="https://www.figma.com/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/figma-colored.svg" width="36" height="36" alt="Figma" /></a><a href="https://www.adobe.com/uk/products/photoshop.html" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/photoshop-colored.svg" width="36" height="36" alt="Photoshop" /></a><a href="https://www.djangoproject.com/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/django-colored.svg" width="36" height="36" alt="Django" /></a><a href="https://www.docker.com/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/docker-colored.svg" width="36" height="36" alt="Docker" /></a>
-</p>
+      const list = document.getElementById('languages-list');
+      sorted.forEach(([lang,count]) => {
+        const pct = Math.round((count/max)*100);
+        const div = document.createElement('div');
+        div.innerHTML = `
+          <span>${lang}</span><span>${pct}%</span>
+          <div class="languages-bar">
+            <div class="lang-bar-fill" style="width:${pct}%"></div>
+          </div>`;
+        list.appendChild(div);
+      });
+    }
 
-
-### Socials
-
-<p align="left"> <a href="https://www.facebook.com/shubham.saha.984" target="_blank" rel="noreferrer"> <picture> <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/socials/facebook-dark.svg" /> <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/socials/facebook.svg" /> <img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/socials/facebook.svg" width="32" height="32" /> </picture> </a> <a href="https://www.github.com/Shubhaaaaam" target="_blank" rel="noreferrer"> <picture> <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/socials/github-dark.svg" /> <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/socials/github.svg" /> <img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/socials/github.svg" width="32" height="32" /> </picture> </a> <a href="http://www.instagram.com/_shubham_400_" target="_blank" rel="noreferrer"> <picture> <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/socials/instagram-dark.svg" /> <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/socials/instagram.svg" /> <img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/socials/instagram.svg" width="32" height="32" /> </picture> </a> <a href="https://www.linkedin.com/in/shubhaaaaam" target="_blank" rel="noreferrer"> <picture> <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/socials/linkedin-dark.svg" /> <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/socials/linkedin.svg" /> <img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/socials/linkedin.svg" width="32" height="32" /> </picture> </a></p>
-
-<b>My GitHub Stats</b>
-
-<a href="http://www.github.com/Shubhaaaaam"><img src="https://github-readme-stats.vercel.app/api?username=Shubhaaaaam&show_icons=true&hide=&count_private=true&title_color=ef4444&text_color=ffffff&icon_color=0891b2&bg_color=1c1917&hide_border=true&show_icons=true" alt="Shubhaaaaam's GitHub stats" /></a>
-
-<a href="http://www.github.com/Shubhaaaaam"><img src="https://github-readme-streak-stats.herokuapp.com/?user=Shubhaaaaam&stroke=ffffff&background=1c1917&ring=ef4444&fire=ef4444&currStreakNum=ffffff&currStreakLabel=ef4444&sideNums=ffffff&sideLabels=ffffff&dates=ffffff&hide_border=true" /></a>
-
-<b>Top Repositories</b>
-
-<div width="100%" align="center"><a href="https://github.com/Shubhaaaaam/HOS-AI" align="left"><img align="left" width="45%" src="https://github-readme-stats.vercel.app/api/pin/?username=Shubhaaaaam&repo=HOS-AI&title_color=ef4444&text_color=ffffff&icon_color=0891b2&bg_color=1c1917&hide_border=true&locale=en" /></a><a href="https://github.com/Shubhaaaaam/Blog-Website" align="right"><img align="right" width="45%" src="https://github-readme-stats.vercel.app/api/pin/?username=Shubhaaaaam&repo=Blog-Website&title_color=ef4444&text_color=ffffff&icon_color=0891b2&bg_color=1c1917&hide_border=true&locale=en" /></a></div><br /><br /><br /><br /><br /><br /><br />
+    loadStats().catch(console.error);
+  </script>
+</body>
+</html>
