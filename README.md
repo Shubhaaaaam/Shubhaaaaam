@@ -1,90 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1.0">
-  <title>GitHub Stats Card</title>
-  <style>
-    body { font-family: Arial, sans-serif; background: #f5f5f5; color: #333; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
-    .card { background: #fff; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); padding: 20px; width: 360px; }
-    .profile { text-align: center; }
-    .profile img { width: 80px; height: 80px; border-radius: 50%; }
-    .profile h2 { margin: 10px 0 5px; font-size: 1.2em; }
-    .profile p { margin: 0; font-size: 0.9em; color: #666; }
-    .stats, .languages { margin-top: 20px; }
-    .stats div, .languages div { display: flex; justify-content: space-between; padding: 4px 0; }
-    .languages-bar { height: 6px; border-radius: 4px; background: #ddd; overflow: hidden; margin-top: 4px; }
-    .lang-bar-fill { height: 100%; background: #4CAF50; }
-  </style>
-</head>
-<body>
-  <div class="card">
-    <div class="profile">
-      <img id="avatar" src="" alt="Avatar">
-      <h2 id="name">Username</h2>
-      <p id="bio"></p>
-    </div>
-    <div class="stats">
-      <div><span>Repos:</span><span id="repo-count">0</span></div>
-      <div><span>Stars:</span><span id="star-count">0</span></div>
-      <div><span>Followers:</span><span id="followers">0</span></div>
-      <div><span>Following:</span><span id="following">0</span></div>
-    </div>
-    <div class="languages">
-      <h3>Top Languages</h3>
-      <div id="languages-list"></div>
-    </div>
-  </div>
+<h1 align="center">Hi 👋, I'm Shubham</h1>
+<h3 align="center">A passionate frontend developer from India</h3>
 
-  <script>
-    const username = 'YOUR_GITHUB_USERNAME';
+<p align="left"> <img src="https://komarev.com/ghpvc/?username=shubhaaaaam&label=Profile%20views&color=0e75b6&style=flat" alt="shubhaaaaam" /> </p>
 
-    async function fetchJSON(url) {
-      const res = await fetch(url);
-      if (!res.ok) throw new Error(`Failed to fetch ${url}`);
-      return res.json();
-    }
+<h3 align="left">Connect with me:</h3>
+<p align="left">
+</p>
 
-    async function loadStats() {
-      const user = await fetchJSON(`https://api.github.com/users/${username}`);
-      document.getElementById('avatar').src       = user.avatar_url;
-      document.getElementById('name').textContent  = user.login;
-      document.getElementById('bio').textContent   = user.bio || '';
-      document.getElementById('repo-count').textContent = user.public_repos;
-      document.getElementById('followers').textContent  = user.followers;
-      document.getElementById('following').textContent  = user.following;
+<h3 align="left">Languages and Tools:</h3>
+<p align="left"> <a href="https://angular.io" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/angularjs/angularjs-original-wordmark.svg" alt="angularjs" width="40" height="40"/> </a> <a href="https://www.cprogramming.com/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/c/c-original.svg" alt="c" width="40" height="40"/> </a> <a href="https://cassandra.apache.org/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/apache_cassandra/apache_cassandra-icon.svg" alt="cassandra" width="40" height="40"/> </a> <a href="https://www.chartjs.org" target="_blank" rel="noreferrer"> <img src="https://www.chartjs.org/media/logo-title.svg" alt="chartjs" width="40" height="40"/> </a> <a href="https://www.w3schools.com/cpp/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/cplusplus/cplusplus-original.svg" alt="cplusplus" width="40" height="40"/> </a> <a href="https://www.w3schools.com/cs/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/csharp/csharp-original.svg" alt="csharp" width="40" height="40"/> </a> <a href="https://www.docker.com/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/docker/docker-original-wordmark.svg" alt="docker" width="40" height="40"/> </a> <a href="https://dotnet.microsoft.com/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/dot-net/dot-net-original-wordmark.svg" alt="dotnet" width="40" height="40"/> </a> <a href="https://firebase.google.com/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/firebase/firebase-icon.svg" alt="firebase" width="40" height="40"/> </a> <a href="https://git-scm.com/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg" alt="git" width="40" height="40"/> </a> <a href="https://golang.org" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/go/go-original.svg" alt="go" width="40" height="40"/> </a> <a href="https://gridsome.org/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/gridsome/gridsome-icon.svg" alt="gridsome" width="40" height="40"/> </a> <a href="https://ifttt.com/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/ifttt/ifttt-ar21.svg" alt="ifttt" width="40" height="40"/> </a> <a href="https://www.photoshop.com/en" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/photoshop/photoshop-line.svg" alt="photoshop" width="40" height="40"/> </a> <a href="https://reactjs.org/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original-wordmark.svg" alt="react" width="40" height="40"/> </a> <a href="https://scikit-learn.org/" target="_blank" rel="noreferrer"> <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Scikit_learn_logo_small.svg" alt="scikit_learn" width="40" height="40"/> </a> <a href="https://www.selenium.dev" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/detain/svg-logos/780f25886640cef088af994181646db2f6b1a3f8/svg/selenium-logo.svg" alt="selenium" width="40" height="40"/> </a> <a href="https://lucene.apache.org/solr/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/apache_solr/apache_solr-icon.svg" alt="solr" width="40" height="40"/> </a> <a href="https://svelte.dev" target="_blank" rel="noreferrer"> <img src="https://upload.wikimedia.org/wikipedia/commons/1/1b/Svelte_Logo.svg" alt="svelte" width="40" height="40"/> </a> <a href="https://unrealengine.com/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/kenangundogan/fontisto/036b7eca71aab1bef8e6a0518f7329f13ed62f6b/icons/svg/brand/unreal-engine.svg" alt="unreal" width="40" height="40"/> </a> <a href="https://vuejs.org/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/vuejs/vuejs-original-wordmark.svg" alt="vuejs" width="40" height="40"/> </a> <a href="https://dotnet.microsoft.com/apps/xamarin" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/detain/svg-logos/780f25886640cef088af994181646db2f6b1a3f8/svg/xamarin.svg" alt="xamarin" width="40" height="40"/> </a> </p>
 
-      // repos and stars
-      let page = 1, repos = [];
-      while (true) {
-        const batch = await fetchJSON(`https://api.github.com/users/${username}/repos?per_page=100&page=${page}`);
-        if (!batch.length) break;
-        repos = repos.concat(batch);
-        page++;
-      }
-      const totalStars = repos.reduce((sum, r) => sum + r.stargazers_count, 0);
-      document.getElementById('star-count').textContent = totalStars;
+<p><img align="left" src="https://github-readme-stats.vercel.app/api/top-langs?username=shubhaaaaam&show_icons=true&locale=en&layout=compact" alt="shubhaaaaam" /></p>
 
-      // top languages
-      const langCount = {};
-      repos.forEach(r => { if (r.language) langCount[r.language] = (langCount[r.language]||0) + 1; });
-      const sorted = Object.entries(langCount).sort((a,b)=>b[1]-a[1]).slice(0,5);
-      const max = sorted[0]?.[1]||1;
+<p>&nbsp;<img align="center" src="https://github-readme-stats.vercel.app/api?username=shubhaaaaam&show_icons=true&locale=en" alt="shubhaaaaam" /></p>
 
-      const list = document.getElementById('languages-list');
-      sorted.forEach(([lang,count]) => {
-        const pct = Math.round((count/max)*100);
-        const div = document.createElement('div');
-        div.innerHTML = `
-          <span>${lang}</span><span>${pct}%</span>
-          <div class="languages-bar">
-            <div class="lang-bar-fill" style="width:${pct}%"></div>
-          </div>`;
-        list.appendChild(div);
-      });
-    }
-
-    loadStats().catch(console.error);
-  </script>
-</body>
-</html>
+<p><img align="center" src="https://github-readme-streak-stats.herokuapp.com/?user=shubhaaaaam&" alt="shubhaaaaam" /></p>
