@@ -1,5 +1,6 @@
 Hi 👋 My name is Shubham Raj
 ============================
+[![GitHub Streak](https://streak-stats.demolab.com?user=Shubhaaaaam&theme=dark)](https://git.io/streak-stats)
 
 Web And Application Developer
 -----------------------------
