@@ -1,6 +1,5 @@
 Hi 👋 My name is Shubham Raj
 ============================
-![Your GitHub stats](https://github-readme-stats.vercel.app/api?username=Shubhaaaaam&show_icons=true&theme=radical)
 
 Web And Application Developer
 -----------------------------
