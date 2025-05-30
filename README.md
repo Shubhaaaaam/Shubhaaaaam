@@ -3,7 +3,8 @@ Hi ![](https://user-images.githubusercontent.com/18350557/176309783-0785949b-912
 
 I’m a driven Full-Stack Engineer specializing in Flask, React, and PostgreSQL, with hands-on expertise in Docker, Kubernetes, and CI/CD. As a Trainee at EdgeVerve, I build scalable, production-grade applications and craft research-backed ML content. Previously, I led development at Swissmote—creating an interactive learning platform with real-time WebSocket challenges and Telegram bot integration. A passionate problem-solver , I’m on a path toward software architecture and thrive in agile, collaborative teams.
 
-* 🌍  I'm based in Bengaluru, India
+* 📍  I'm based in Bengaluru, India
+* 🌍  You can visit my website https://shubhaaaaam.vercel.app/
 * ✉️  You can contact me at [shubhamsaha400@gmail.com](mailto:shubhamsaha400@gmail.com)
 * 🧠  I'm learning AI/ML
 
