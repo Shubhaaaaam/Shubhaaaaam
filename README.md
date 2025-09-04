@@ -8,7 +8,7 @@ I’m a driven Full-Stack Engineer specializing in Flask, React, and PostgreSQL,
 * ✉️  You can contact me at [shubhamsaha400@gmail.com](mailto:shubhamsaha400@gmail.com)
 * 🧠  I'm learning AI/ML
 
-<p align="left"> <img src="https://komarev.com/ghpvc/?username=shubhaaaaam&label=Profile%20views&color=0e75b6&style=flat" alt="shubhaaaaam" /> </p>
+<p align="left"> <img src="https://komarev.com/ghpvc/?username=shubhaaaaam&label=Profile%20views&color=0e75b6&style=flat&base=1000" alt="shubhaaaaam" /> </p>
 
 ### Skills
 
