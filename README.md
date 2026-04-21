@@ -16,7 +16,7 @@
 
 <p>
 Driven Full-Stack Engineer specializing in <b>Flask, React, and PostgreSQL</b>, with hands-on experience in <b>Docker, Kubernetes, and CI/CD</b>.  
-Currently working as a <b>Trainee at EdgeVerve</b>, building scalable systems and ML-focused solutions.  
+Currently working as a <b>Intern at EdgeVerve</b>, building scalable systems solutions.  
 
 Previously led development at <b>Swissmote</b>, delivering real-time learning platforms with WebSockets and bot integrations.
 </p>
@@ -58,7 +58,7 @@ Previously led development at <b>Swissmote</b>, delivering real-time learning pl
 
 ## 🌐 Connect With Me
 
-<p align="center">
+<p align="left">
   <a href="https://www.github.com/Shubhaaaaam"><img src="https://skillicons.dev/icons?i=github" /></a>
   <a href="https://www.linkedin.com/in/shubhaaaaam"><img src="https://skillicons.dev/icons?i=linkedin" /></a>
   <a href="https://www.instagram.com/_shubham_400_"><img src="https://skillicons.dev/icons?i=instagram" /></a>
@@ -69,8 +69,7 @@ Previously led development at <b>Swissmote</b>, delivering real-time learning pl
 ## 📊 GitHub Stats
 
 <p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=Shubhaaaaam&show_icons=true&theme=tokyonight&hide_border=true" width="48%" />
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Shubhaaaaam&layout=compact&theme=tokyonight&hide_border=true" width="48%" />
+  <img src="https://github-readme-stats.vercel.app/api?username=Shubhaaaaam&show_icons=true&theme=tokyonight&hide_border=true" />
 </p>
 
 ---
