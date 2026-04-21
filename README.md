@@ -79,7 +79,7 @@ I’m a **driven Full-Stack Engineer** specializing in **Flask, React, and Postg
 
 ## 🌐 Socials
 
-<p align="left">
+<p align="center">
   <a href="https://www.facebook.com/shubham.saha.984" target="_blank"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/socials/facebook.svg" width="32" height="32" alt="Facebook"/></a>
   <a href="https://www.github.com/Shubhaaaaam" target="_blank"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/socials/github.svg" width="32" height="32" alt="GitHub"/></a>
   <a href="http://www.instagram.com/_shubham_400_" target="_blank"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/socials/instagram.svg" width="32" height="32" alt="Instagram"/></a>
