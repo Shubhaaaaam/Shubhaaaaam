@@ -1,6 +1,6 @@
 # Hi 👋 I'm Shubham Raj  
 
-💻 **Full-Stack Engineer | Backend-Focused | Systems & Cloud Enthusiast**
+**Full-Stack Engineer | Backend-Focused | Systems & Cloud Enthusiast**
 
 I build **scalable, production-grade applications** using Flask, React, and PostgreSQL, with hands-on experience in **cloud operations, distributed systems, and CI/CD pipelines**. Currently working as **Production Engineering at EdgeVerve (Finacle as a Service)**, where I focus on system reliability, debugging, and performance optimization in UNIX-based environments.
 
